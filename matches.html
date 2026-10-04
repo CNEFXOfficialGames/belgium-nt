@@ -58,22 +58,24 @@
 
 <main>
 
-    <!-- PAGE HERO -->
+    <!-- PAGE INTRO -->
 
-    <section class="page-hero">
+    <section class="matches-intro">
 
-        <p class="section-label">BELGIUM NATIONAL TEAM</p>
+        <div>
+            <p class="section-label">FIXTURES & RESULTS</p>
 
-        <h1>Matches</h1>
+            <h1>Matches</h1>
+        </div>
 
-        <p>
-            Upcoming fixtures and recent results for the Red Devils.
+        <p class="intro-copy">
+            Follow Belgium's upcoming fixtures and latest results.
         </p>
 
     </section>
 
 
-    <!-- NEXT MATCH -->
+    <!-- UPCOMING -->
 
     <section class="matches-section">
 
@@ -81,55 +83,76 @@
 
             <div>
                 <p class="section-label">UPCOMING</p>
-                <h2>Next match</h2>
+                <h2>Next fixture</h2>
             </div>
 
         </div>
 
 
-        <article class="large-match-card">
+        <article class="fixture-card">
 
-            <div class="large-match-top">
-                <span>UEFA Nations League · League A1</span>
-                <span class="match-status upcoming">UPCOMING</span>
+            <div class="fixture-header">
+
+                <div>
+                    <span class="fixture-competition">
+                        UEFA Nations League
+                    </span>
+
+                    <span class="fixture-stage">
+                        League A1
+                    </span>
+                </div>
+
+                <span class="fixture-status">
+                    UPCOMING
+                </span>
+
             </div>
 
 
-            <div class="large-match-teams">
+            <div class="fixture-main">
 
-                <div class="large-team">
+                <div class="fixture-team">
 
-                    <div class="large-team-crest belgium-crest">
-                        <span class="crest-flag">
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                        </span>
+                    <div class="country-flag belgium-flag-large">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
                     <h3>Belgium</h3>
 
+                    <span class="team-code">BEL</span>
+
                 </div>
 
 
-                <div class="large-match-time">
+                <div class="fixture-center">
 
-                    <span>MONDAY · 5 OCTOBER 2026</span>
+                    <span class="fixture-date">
+                        MON · 5 OCT 2026
+                    </span>
 
                     <strong>20:45</strong>
 
-                    <small>Stade de France · Saint-Denis</small>
+                    <span class="fixture-venue">
+                        Stade de France · Saint-Denis
+                    </span>
 
                 </div>
 
 
-                <div class="large-team">
+                <div class="fixture-team">
 
-                    <div class="large-team-crest france-crest">
-                        FR
+                    <div class="country-flag france-flag">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
                     <h3>France</h3>
+
+                    <span class="team-code">FRA</span>
 
                 </div>
 
@@ -140,15 +163,15 @@
     </section>
 
 
-    <!-- RECENT RESULTS -->
+    <!-- RESULTS -->
 
-    <section class="matches-section">
+    <section class="matches-section results-section">
 
         <div class="section-heading">
 
             <div>
-                <p class="section-label">RECENT</p>
-                <h2>Results</h2>
+                <p class="section-label">RECENT RESULTS</p>
+                <h2>Latest matches</h2>
             </div>
 
         </div>
@@ -157,85 +180,141 @@
         <div class="results-list">
 
 
-            <article class="result-match-card">
+            <!-- BELGIUM 3-0 TÜRKIYE -->
 
-                <div class="result-date">
-                    <span>2 OCT</span>
-                    <small>2026</small>
+            <article class="result-card">
+
+                <div class="result-meta">
+
+                    <span class="result-date">
+                        02 OCT
+                    </span>
+
+                    <span class="result-year">
+                        2026
+                    </span>
+
                 </div>
 
 
-                <div class="result-competition">
+                <div class="result-info">
+
                     <span>UEFA Nations League</span>
+
                     <small>League A1</small>
-                </div>
-
-
-                <div class="result-match-teams">
-
-                    <strong>Belgium</strong>
-
-                    <span class="result-mini-crest belgium-mini">
-                        BE
-                    </span>
-
-                    <strong class="result-final-score">
-                        3 — 0
-                    </strong>
-
-                    <span class="result-mini-crest opponent">
-                        TR
-                    </span>
-
-                    <strong>Türkiye</strong>
 
                 </div>
 
 
-                <span class="result-label win">
-                    WIN
+                <div class="result-teams">
+
+                    <div class="result-team">
+
+                        <span>Belgium</span>
+
+                        <div class="country-flag belgium-flag-small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-score">
+                        <strong>3</strong>
+                        <span>—</span>
+                        <strong>0</strong>
+                    </div>
+
+
+                    <div class="result-team result-team-away">
+
+                        <div class="country-flag turkey-flag-small">
+                            <span class="turkey-star star-one">★</span>
+                            <span class="turkey-star star-two">★</span>
+                            <span class="turkey-crescent"></span>
+                        </div>
+
+                        <span>Türkiye</span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="result-status win">
+                    W
                 </span>
 
             </article>
 
 
-            <article class="result-match-card">
+            <!-- BELGIUM 0-1 FRANCE -->
 
-                <div class="result-date">
-                    <span>29 SEP</span>
-                    <small>2026</small>
+            <article class="result-card">
+
+                <div class="result-meta">
+
+                    <span class="result-date">
+                        29 SEP
+                    </span>
+
+                    <span class="result-year">
+                        2026
+                    </span>
+
                 </div>
 
 
-                <div class="result-competition">
+                <div class="result-info">
+
                     <span>UEFA Nations League</span>
+
                     <small>League A1</small>
-                </div>
-
-
-                <div class="result-match-teams">
-
-                    <strong>Belgium</strong>
-
-                    <span class="result-mini-crest belgium-mini">
-                        BE
-                    </span>
-
-                    <strong class="result-final-score">
-                        0 — 1
-                    </strong>
-
-                    <span class="result-mini-crest opponent">
-                        FR
-                    </span>
-
-                    <strong>France</strong>
 
                 </div>
 
 
-                <span class="result-label loss">
-                    LOSS
+                <div class="result-teams">
+
+                    <div class="result-team">
+
+                        <span>Belgium</span>
+
+                        <div class="country-flag belgium-flag-small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-score">
+                        <strong>0</strong>
+                        <span>—</span>
+                        <strong>1</strong>
+                    </div>
+
+
+                    <div class="result-team result-team-away">
+
+                        <div class="country-flag france-flag-small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>France</span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="result-status loss">
+                    L
                 </span>
 
             </article>
@@ -251,6 +330,7 @@
 <footer class="site-footer">
 
     <p>© 2026 Belgium NT</p>
+
     <p>Red Devils</p>
 
 </footer>
@@ -259,4 +339,3 @@
 </body>
 </html>
 
-</html>
