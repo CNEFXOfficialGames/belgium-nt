@@ -64,7 +64,7 @@ letter-spacing: 0.15em;
 }
 
 /* =========================
-TABLE WRAPPER
+TABLE
 ========================= */
 
 .standings-table {
@@ -80,20 +80,16 @@ background: #0d0d0d;
 
 }
 
-/* =========================
-TABLE ROW
-========================= */
-
 .standings-row {
-min-height: 82px;
+min-height: 88px;
 
 ```
 display: grid;
 grid-template-columns:
     65px
     minmax(240px, 1fr)
-    repeat(5, 58px)
-    75px;
+    repeat(5, 65px)
+    80px;
 
 align-items: center;
 
@@ -101,9 +97,9 @@ position: relative;
 
 border-top: 1px solid #222;
 
-color: #777;
+color: #999;
 
-font-size: 0.72rem;
+font-size: 0.88rem;
 ```
 
 }
@@ -112,15 +108,27 @@ font-size: 0.72rem;
 border-top: none;
 }
 
+/* =========================
+STAT NUMBERS
+========================= */
+
 .standings-row > span {
+color: #a5a5a5;
+
+```
 text-align: center;
+
+font-size: 0.92rem;
+font-weight: 600;
+```
+
 }
 
 .standings-row > span:first-child {
 color: #555;
 
 ```
-font-size: 0.68rem;
+font-size: 0.8rem;
 font-weight: 800;
 ```
 
@@ -131,14 +139,14 @@ TABLE HEADER
 ========================= */
 
 .standings-header {
-min-height: 50px;
+min-height: 52px;
 
 ```
 background: #151515;
 
 color: #505050;
 
-font-size: 0.57rem;
+font-size: 0.62rem;
 font-weight: 800;
 
 letter-spacing: 0.14em;
@@ -147,7 +155,14 @@ letter-spacing: 0.14em;
 }
 
 .standings-header > span {
+color: #555;
+
+```
 text-align: center;
+
+font-size: 0.62rem;
+```
+
 }
 
 /* =========================
@@ -164,15 +179,15 @@ gap: 16px;
 color: #e8e8e8;
 
 ```
-font-size: 0.9rem;
+font-size: 0.95rem;
 font-weight: 700;
 ```
 
 }
 
 .standing-flag {
-width: 34px;
-height: 23px;
+width: 36px;
+height: 24px;
 
 ```
 flex-shrink: 0;
@@ -234,8 +249,8 @@ width: 10px;
 height: 10px;
 
 position: absolute;
-left: 9px;
-top: 6px;
+left: 10px;
+top: 7px;
 
 border-radius: 50%;
 
@@ -252,8 +267,8 @@ width: 8px;
 height: 8px;
 
 position: absolute;
-left: 12px;
-top: 6px;
+left: 13px;
+top: 7px;
 
 border-radius: 50%;
 
@@ -293,7 +308,7 @@ background: #c8102e;
 }
 
 .belgium-row > span {
-color: #a2a2a2;
+color: #b5b5b5;
 }
 
 .belgium-row .standing-team strong {
@@ -301,4 +316,11 @@ color: #fff;
 }
 
 .belgium-row > span:last-child {
+color: #f4c300;
 
+```
+font-size: 1.15rem;
+font-weight: 900;
+```
+
+}
