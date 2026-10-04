@@ -14,11 +14,9 @@ html {
 
 body {
     min-height: 100vh;
-
     font-family: Arial, Helvetica, sans-serif;
     background: #080808;
     color: #f5f5f5;
-
     line-height: 1.5;
 }
 
@@ -29,6 +27,11 @@ a {
 
 button {
     font: inherit;
+}
+
+main {
+    width: min(1400px, 92%);
+    margin: 0 auto;
 }
 
 
@@ -51,11 +54,6 @@ button {
     align-items: center;
     justify-content: space-between;
 }
-
-
-/* =========================
-   BRAND
-   ========================= */
 
 .brand {
     display: flex;
@@ -84,11 +82,6 @@ button {
     font-size: 0.9rem;
 }
 
-
-/* =========================
-   NAVIGATION
-   ========================= */
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -97,7 +90,6 @@ button {
 
 .nav-link {
     position: relative;
-
     padding: 28px 0;
 
     color: #8d8d8d;
@@ -107,10 +99,7 @@ button {
     transition: color 0.2s ease;
 }
 
-.nav-link:hover {
-    color: #ffffff;
-}
-
+.nav-link:hover,
 .nav-link.active {
     color: #ffffff;
 }
@@ -124,14 +113,8 @@ button {
     bottom: 17px;
 
     height: 2px;
-
     background: #c8102e;
 }
-
-
-/* =========================
-   MOBILE MENU BUTTON
-   ========================= */
 
 .menu-button {
     display: none;
@@ -141,30 +124,538 @@ button {
 
     border: 1px solid #292929;
     background: transparent;
-    color: #ffffff;
-
     cursor: pointer;
 }
 
 .menu-button span {
     display: block;
-
     width: 18px;
     height: 2px;
-
     margin: 4px auto;
-
     background: #ffffff;
 }
 
 
 /* =========================
-   MAIN
+   HERO
    ========================= */
 
-main {
-    width: min(1400px, 92%);
-    margin: 0 auto;
+.hero {
+    min-height: 620px;
+    padding: 100px 7%;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #202020;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label,
+.section-label {
+    color: #c8102e;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.hero h1 {
+    margin: 18px 0;
+
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #c8102e;
+}
+
+.hero-description {
+    max-width: 400px;
+    margin-bottom: 30px;
+
+    color: #8d8d8d;
+    font-size: 1rem;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+
+    padding: 14px 18px;
+
+    background: #f5f5f5;
+    color: #080808;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background: #f4c300;
+    transform: translateY(-2px);
+}
+
+.hero-button-arrow {
+    font-size: 1.1rem;
+}
+
+.hero-visual {
+    width: 42%;
+    height: 430px;
+
+    position: relative;
+}
+
+.hero-line {
+    position: absolute;
+    transform: rotate(-25deg);
+}
+
+.hero-line-red {
+    width: 180px;
+    height: 520px;
+
+    top: -40px;
+    right: 28%;
+
+    background: #c8102e;
+    opacity: 0.9;
+}
+
+.hero-line-yellow {
+    width: 90px;
+    height: 520px;
+
+    top: -30px;
+    right: 14%;
+
+    background: #f4c300;
+}
+
+.hero-badge {
+    width: 210px;
+    height: 210px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ffffff33;
+    border-radius: 50%;
+
+    background: #080808;
+
+    text-align: center;
+}
+
+.hero-badge span {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+}
+
+.hero-badge small {
+    margin-top: 4px;
+    color: #888;
+    letter-spacing: 0.2em;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.next-match,
+.featured-players {
+    padding: 90px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin-top: 5px;
+
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
+}
+
+.text-link {
+    color: #888;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.text-link:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   NEXT MATCH
+   ========================= */
+
+.match-card {
+    padding: 28px;
+
+    border: 1px solid #262626;
+    background: #111111;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.match-card:hover {
+    border-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.match-competition {
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.match-competition span:last-child {
+    color: #c8102e;
+}
+
+.match-teams {
+    min-height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(35px, 10vw, 150px);
+}
+
+.team {
+    min-width: 130px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    text-align: center;
+}
+
+.team h3 {
+    font-size: 1.1rem;
+}
+
+.team-crest {
+    width: 100px;
+    height: 100px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #333;
+
+    background: #181818;
+
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.belgium-crest {
+    border-color: #c8102e;
+}
+
+.france-crest {
+    border-color: #273e91;
+}
+
+.match-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.match-time span {
+    color: #666;
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.match-time strong {
+    font-size: 1.6rem;
+}
+
+.match-time small {
+    color: #777;
+    font-size: 0.65rem;
+}
+
+.match-location {
+    padding-top: 20px;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+
+/* =========================
+   DASHBOARD
+   ========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard-card {
+    padding: 28px;
+
+    border: 1px solid #262626;
+    background: #111111;
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.card-top h2 {
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+.result-status {
+    padding: 5px 9px;
+
+    background: #16351e;
+    color: #5cce76;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.result-score {
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.result-score > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 0.8rem;
+}
+
+.score {
+    font-size: 2rem;
+}
+
+.mini-crest {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    background: #c8102e;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.mini-crest.opponent {
+    background: #202020;
+}
+
+.card-footer {
+    padding-top: 18px;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+    font-size: 0.7rem;
+}
+
+
+/* =========================
+   STANDINGS
+   ========================= */
+
+.table-row {
+    min-height: 42px;
+
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+
+    border-bottom: 1px solid #202020;
+
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row strong {
+    color: #ffffff;
+}
+
+.table-header {
+    min-height: 30px;
+    border-bottom: 1px solid #333;
+
+    color: #555;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.table-row.highlighted {
+    margin: 0 -10px;
+    padding: 0 10px;
+
+    border-left: 2px solid #c8102e;
+
+    background: #181818;
+    color: #ffffff;
+}
+
+
+/* =========================
+   PLAYERS
+   ========================= */
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.player-card {
+    min-height: 380px;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 28px;
+
+    display: flex;
+    align-items: flex-end;
+
+    border: 1px solid #262626;
+    background:
+        linear-gradient(
+            145deg,
+            #191919 0%,
+            #0e0e0e 70%
+        );
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+.player-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    color: #ffffff0d;
+
+    font-size: 9rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.player-info {
+    position: relative;
+    z-index: 2;
+}
+
+.player-info span {
+    color: #888;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.player-info h3 {
+    margin-top: 8px;
+
+    font-size: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.player-accent {
+    width: 70px;
+    height: 5px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.player-accent.red {
+    background: #c8102e;
+}
+
+.player-accent.yellow {
+    background: #f4c300;
 }
 
 
@@ -174,7 +665,7 @@ main {
 
 .site-footer {
     width: min(1400px, 92%);
-    margin: 80px auto 0;
+    margin: 0 auto;
     padding: 30px 0;
 
     display: flex;
@@ -182,8 +673,8 @@ main {
 
     border-top: 1px solid #202020;
 
-    color: #666666;
-    font-size: 0.8rem;
+    color: #666;
+    font-size: 0.75rem;
 }
 
 
@@ -191,7 +682,7 @@ main {
    RESPONSIVE
    ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     .nav-links {
         display: none;
@@ -201,12 +692,75 @@ main {
         display: block;
     }
 
-    .brand-name {
-        font-size: 0.8rem;
+    .hero {
+        min-height: 600px;
+        padding: 80px 5%;
     }
 
-    .site-footer {
+    .hero-visual {
+        position: absolute;
+        right: -80px;
+        width: 55%;
+        opacity: 0.35;
+    }
+
+    .dashboard-grid,
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .match-teams {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    main {
+        width: 94%;
+    }
+
+    .navbar {
+        width: 94%;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .section-heading {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 6px;
+        gap: 12px;
+    }
+
+    .match-teams {
+        gap: 10px;
+    }
+
+    .team {
+        min-width: 90px;
+    }
+
+    .team-crest {
+        width: 70px;
+        height: 70px;
+    }
+
+    .result-score {
+        gap: 8px;
+    }
+
+    .result-score > div {
+        flex-direction: column;
+        text-align: center;
     }
 }
