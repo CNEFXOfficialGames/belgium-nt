@@ -1,31 +1,41 @@
 /* =========================
-MATCHES PAGE
+MATCHES INTRO
 ========================= */
 
-.page-hero {
-padding: 105px 0 75px;
+.matches-intro {
+min-height: 300px;
+padding: 85px 0 65px;
+
+```
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+
 border-bottom: 1px solid #202020;
+```
+
 }
 
-.page-hero h1 {
+.matches-intro h1 {
 margin-top: 12px;
 
 ```
-font-size: clamp(4.5rem, 10vw, 8.5rem);
-line-height: 0.82;
+font-size: clamp(4.5rem, 10vw, 8rem);
+line-height: 0.8;
 letter-spacing: -0.08em;
 font-weight: 900;
 ```
 
 }
 
-.page-hero p:last-child {
-max-width: 420px;
-margin-top: 25px;
+.intro-copy {
+max-width: 300px;
 
 ```
-color: #777;
-font-size: 0.9rem;
+color: #666;
+
+font-size: 0.85rem;
+line-height: 1.7;
 ```
 
 }
@@ -35,19 +45,18 @@ SECTIONS
 ========================= */
 
 .matches-section {
-padding: 85px 0 0;
+padding: 80px 0 0;
 }
 
-.matches-section:last-of-type {
+.results-section {
 padding-bottom: 100px;
 }
 
 /* =========================
-NEXT MATCH
+FIXTURE CARD
 ========================= */
 
-.large-match-card {
-position: relative;
+.fixture-card {
 overflow: hidden;
 
 ```
@@ -55,88 +64,656 @@ border: 1px solid #292929;
 
 background:
     radial-gradient(
-        circle at 50% 45%,
-        #242424 0%,
-        #151515 38%,
-        #0d0d0d 75%
+        circle at 50% 50%,
+        #202020 0%,
+        #131313 45%,
+        #0b0b0b 100%
     );
 
-transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
+box-shadow: 0 25px 80px #00000045;
 ```
 
 }
 
-.large-match-card::before {
+.fixture-header {
+min-height: 70px;
+padding: 0 28px;
+
+```
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+border-bottom: 1px solid #262626;
+```
+
+}
+
+.fixture-header > div {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.fixture-competition {
+color: #b0b0b0;
+
+```
+font-size: 0.7rem;
+font-weight: 700;
+```
+
+}
+
+.fixture-stage {
+padding-left: 12px;
+
+```
+border-left: 1px solid #333;
+
+color: #555;
+
+font-size: 0.65rem;
+```
+
+}
+
+.fixture-status {
+color: #c8102e;
+
+```
+font-size: 0.6rem;
+font-weight: 800;
+letter-spacing: 0.12em;
+```
+
+}
+
+.fixture-main {
+min-height: 370px;
+padding: 60px 8%;
+
+```
+display: grid;
+grid-template-columns: 1fr 220px 1fr;
+align-items: center;
+
+gap: 40px;
+```
+
+}
+
+.fixture-team {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+```
+gap: 12px;
+
+text-align: center;
+```
+
+}
+
+.fixture-team h3 {
+font-size: 1.3rem;
+}
+
+.team-code {
+color: #555;
+
+```
+font-size: 0.58rem;
+font-weight: 800;
+letter-spacing: 0.16em;
+```
+
+}
+
+/* =========================
+FLAGS
+========================= */
+
+.country-flag {
+position: relative;
+
+```
+overflow: hidden;
+
+box-shadow:
+    0 15px 40px #00000055,
+    inset 0 0 0 1px #ffffff12;
+```
+
+}
+
+/* Belgium */
+
+.belgium-flag-large {
+width: 110px;
+height: 110px;
+
+```
+display: flex;
+```
+
+}
+
+.belgium-flag-large span {
+flex: 1;
+}
+
+.belgium-flag-large span:nth-child(1) {
+background: #050505;
+}
+
+.belgium-flag-large span:nth-child(2) {
+background: #f4c300;
+}
+
+.belgium-flag-large span:nth-child(3) {
+background: #c8102e;
+}
+
+/* France */
+
+.france-flag {
+width: 110px;
+height: 110px;
+
+```
+display: flex;
+```
+
+}
+
+.france-flag span {
+flex: 1;
+}
+
+.france-flag span:nth-child(1) {
+background: #002654;
+}
+
+.france-flag span:nth-child(2) {
+background: #ffffff;
+}
+
+.france-flag span:nth-child(3) {
+background: #ed2939;
+}
+
+/* Small flags */
+
+.belgium-flag-small,
+.france-flag-small,
+.turkey-flag-small {
+width: 36px;
+height: 36px;
+
+```
+flex-shrink: 0;
+```
+
+}
+
+.belgium-flag-small {
+display: flex;
+}
+
+.belgium-flag-small span {
+flex: 1;
+}
+
+.belgium-flag-small span:nth-child(1) {
+background: #050505;
+}
+
+.belgium-flag-small span:nth-child(2) {
+background: #f4c300;
+}
+
+.belgium-flag-small span:nth-child(3) {
+background: #c8102e;
+}
+
+.france-flag-small {
+display: flex;
+}
+
+.france-flag-small span {
+flex: 1;
+}
+
+.france-flag-small span:nth-child(1) {
+background: #002654;
+}
+
+.france-flag-small span:nth-child(2) {
+background: #ffffff;
+}
+
+.france-flag-small span:nth-child(3) {
+background: #ed2939;
+}
+
+/* Türkiye */
+
+.turkey-flag-small {
+background: #e30a17;
+}
+
+.turkey-crescent {
+position: absolute;
+
+```
+width: 18px;
+height: 18px;
+
+top: 9px;
+left: 7px;
+
+border-radius: 50%;
+
+background: #ffffff;
+```
+
+}
+
+.turkey-crescent::after {
 content: "";
 
 ```
 position: absolute;
-top: 0;
-left: 0;
 
-width: 4px;
-height: 100%;
+width: 14px;
+height: 14px;
 
-background: #c8102e;
+top: 2px;
+left: 5px;
+
+border-radius: 50%;
+
+background: #e30a17;
 ```
 
 }
 
-.large-match-card:hover {
-transform: translateY(-3px);
-border-color: #3b3b3b;
-}
-
-.large-match-top {
-position: relative;
+.turkey-star {
+position: absolute;
 z-index: 2;
 
 ```
-padding: 22px 28px;
+color: #ffffff;
 
+font-size: 6px;
+```
+
+}
+
+.star-one {
+top: 13px;
+left: 23px;
+}
+
+.star-two {
+top: 18px;
+left: 25px;
+}
+
+/* =========================
+FIXTURE CENTER
+========================= */
+
+.fixture-center {
 display: flex;
-justify-content: space-between;
+flex-direction: column;
 align-items: center;
 
-border-bottom: 1px solid #292929;
+```
+gap: 9px;
 
-color: #686868;
+text-align: center;
+```
 
+}
+
+.fixture-date {
+color: #666;
+
+```
+font-size: 0.6rem;
+font-weight: 800;
+letter-spacing: 0.12em;
+```
+
+}
+
+.fixture-center strong {
+font-size: 3.4rem;
+line-height: 1;
+
+```
+letter-spacing: -0.06em;
+```
+
+}
+
+.fixture-venue {
+color: #555;
+
+```
 font-size: 0.65rem;
-font-weight: 700;
-letter-spacing: 0.12em;
-text-transform: uppercase;
 ```
 
 }
 
-.match-status {
-padding: 6px 10px;
+/* =========================
+RESULTS
+========================= */
 
-```
-border: 1px solid #5b202a;
-
-color: #e15a6d;
-
-font-size: 0.58rem;
-letter-spacing: 0.12em;
-```
-
+.results-list {
+border-top: 1px solid #292929;
 }
 
-.large-match-teams {
-position: relative;
+.result-card {
+min-height: 105px;
+padding: 18px 20px;
 
 ```
-min-height: 370px;
-padding: 55px 7%;
-
 display: grid;
-grid-template-columns: 1fr 220px 1fr;
-align-items:
+grid-template-columns: 85px 180px 1fr 35px;
+align-items: center;
+
+gap: 25px;
+
+border-bottom: 1px solid #202020;
+
+background: #0d0d0d;
+
+transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 ```
 
+}
+
+.result-card:hover {
+background: #121212;
+transform: translateX(4px);
+}
+
+/* Result date */
+
+.result-meta {
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+.result-date {
+color: #eeeeee;
+
+```
+font-size: 0.75rem;
+font-weight: 800;
+```
 
 }
+
+.result-year {
+color: #4d4d4d;
+
+```
+font-size: 0.58rem;
+```
+
+}
+
+/* Competition */
+
+.result-info {
+display: flex;
+flex-direction: column;
+gap: 3px;
+}
+
+.result-info span {
+color: #999;
+
+```
+font-size: 0.68rem;
+font-weight: 600;
+```
+
+}
+
+.result-info small {
+color: #4d4d4d;
+
+```
+font-size: 0.58rem;
+```
+
+}
+
+/* Result teams */
+
+.result-teams {
+display: grid;
+grid-template-columns: 1fr 80px 1fr;
+align-items: center;
+
+```
+gap: 12px;
+```
+
+}
+
+.result-team {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+
+```
+gap: 10px;
+
+color: #eeeeee;
+
+font-size: 0.76rem;
+font-weight: 600;
+```
+
+}
+
+.result-team-away {
+justify-content: flex-start;
+}
+
+.result-score {
+display: flex;
+justify-content: center;
+align-items: center;
+
+```
+gap: 8px;
+```
+
+}
+
+.result-score strong {
+font-size: 1.05rem;
+}
+
+.result-score span {
+color: #444;
+}
+
+.result-status {
+width: 27px;
+height: 27px;
+
+```
+display: grid;
+place-items: center;
+
+font-size: 0.55rem;
+font-weight: 900;
+```
+
+}
+
+.result-status.win {
+background: #16351e;
+color: #5cce76;
+}
+
+.result-status.loss {
+background: #321217;
+color: #e15a6d;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+```
+.matches-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fixture-main {
+    grid-template-columns: 1fr 170px 1fr;
+    gap: 20px;
+}
+
+.belgium-flag-large,
+.france-flag {
+    width: 90px;
+    height: 90px;
+}
+
+.fixture-center strong {
+    font-size: 2.7rem;
+}
+
+.result-card {
+    grid-template-columns: 65px 1fr 35px;
+}
+
+.result-info {
+    display: none;
+}
+```
+
+}
+
+@media (max-width: 600px) {
+
+```
+.matches-intro {
+    min-height: 250px;
+    padding: 70px 0 55px;
+}
+
+.matches-intro h1 {
+    font-size: 4.2rem;
+}
+
+.matches-section {
+    padding-top: 60px;
+}
+
+.fixture-header {
+    padding: 0 18px;
+}
+
+.fixture-header > div {
+    gap: 8px;
+}
+
+.fixture-stage {
+    display: none;
+}
+
+.fixture-main {
+    min-height: 350px;
+    padding: 40px 15px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+
+    gap: 25px;
+}
+
+.fixture-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.fixture-team {
+    grid-row: 2;
+}
+
+.belgium-flag-large,
+.france-flag {
+    width: 75px;
+    height: 75px;
+}
+
+.fixture-team h3 {
+    font-size: 1rem;
+}
+
+.fixture-center strong {
+    font-size: 2.5rem;
+}
+
+.result-card {
+    min-height: 90px;
+
+    padding: 15px 8px;
+
+    grid-template-columns: 50px 1fr 30px;
+
+    gap: 8px;
+}
+
+.result-card:hover {
+    transform: none;
+}
+
+.result-teams {
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 5px;
+}
+
+.result-team {
+    gap: 6px;
+
+    font-size: 0.65rem;
+}
+
+.result-team > span {
+    display: none;
+}
+
+.belgium-flag-small,
+.france-flag-small,
+.turkey-flag-small {
+    width: 30px;
+    height: 30px;
+}
+
+.result-score {
+    gap: 5px;
+}
+```
+
+}
+
