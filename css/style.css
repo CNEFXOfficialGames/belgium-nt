@@ -1,7 +1,3 @@
-/* =========================
-   RESET
-   ========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +37,7 @@ main {
 
 .site-header {
     width: 100%;
-    border-bottom: 1px solid #202020;
+    border-bottom: 1px solid #242424;
     background: #080808;
 }
 
@@ -64,18 +60,28 @@ main {
     letter-spacing: 0.08em;
 }
 
-.brand-mark {
-    display: grid;
-    place-items: center;
-
+.brand-flag {
     width: 34px;
     height: 34px;
 
-    background: #c8102e;
-    color: #ffffff;
+    display: flex;
+    overflow: hidden;
+}
 
-    font-size: 0.75rem;
-    font-weight: 800;
+.brand-flag span {
+    flex: 1;
+}
+
+.brand-flag span:nth-child(1) {
+    background: #050505;
+}
+
+.brand-flag span:nth-child(2) {
+    background: #f4c300;
+}
+
+.brand-flag span:nth-child(3) {
+    background: #c8102e;
 }
 
 .brand-name {
@@ -132,6 +138,7 @@ main {
     width: 18px;
     height: 2px;
     margin: 4px auto;
+
     background: #ffffff;
 }
 
@@ -151,17 +158,27 @@ main {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid #202020;
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            #252525 0%,
+            #171717 28%,
+            #101010 55%,
+            #0d0d0d 100%
+        );
+
+    border-bottom: 1px solid #292929;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .hero-label,
 .section-label {
     color: #c8102e;
+
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -184,7 +201,7 @@ main {
     max-width: 400px;
     margin-bottom: 30px;
 
-    color: #8d8d8d;
+    color: #999;
     font-size: 1rem;
 }
 
@@ -215,60 +232,85 @@ main {
     font-size: 1.1rem;
 }
 
+
+/* =========================
+   HERO FLAG
+   ========================= */
+
 .hero-visual {
     width: 42%;
     height: 430px;
 
     position: relative;
+    z-index: 1;
 }
 
-.hero-line {
-    position: absolute;
-    transform: rotate(-25deg);
-}
-
-.hero-line-red {
-    width: 180px;
-    height: 520px;
-
-    top: -40px;
-    right: 28%;
-
-    background: #c8102e;
-    opacity: 0.9;
-}
-
-.hero-line-yellow {
-    width: 90px;
-    height: 520px;
-
-    top: -30px;
-    right: 14%;
-
-    background: #f4c300;
-}
-
-.hero-badge {
-    width: 210px;
-    height: 210px;
+.belgian-flag {
+    width: 330px;
+    height: 430px;
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    right: 8%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translateY(-50%)
+        rotate(-8deg)
+        skewY(-2deg);
+
+    display: flex;
+
+    overflow: hidden;
+
+    opacity: 0.95;
+
+    box-shadow:
+        0 30px 80px #00000066;
+}
+
+.belgian-flag span {
+    display: block;
+    height: 100%;
+}
+
+.flag-black {
+    width: 33.33%;
+    background: #050505;
+}
+
+.flag-yellow {
+    width: 33.33%;
+    background: #f4c300;
+}
+
+.flag-red {
+    width: 33.33%;
+    background: #c8102e;
+}
+
+.hero-badge {
+    width: 190px;
+    height: 190px;
+
+    position: absolute;
+    top: 50%;
+    right: 32%;
+
+    transform: translate(50%, -50%);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #ffffff33;
+    border: 1px solid #ffffff44;
     border-radius: 50%;
 
-    background: #080808;
+    background: #101010e8;
 
     text-align: center;
+
+    box-shadow: 0 20px 50px #00000055;
 }
 
 .hero-badge span {
@@ -279,7 +321,10 @@ main {
 
 .hero-badge small {
     margin-top: 4px;
+
     color: #888;
+
+    font-size: 0.65rem;
     letter-spacing: 0.2em;
 }
 
@@ -310,6 +355,7 @@ main {
 
 .text-link {
     color: #888;
+
     font-size: 0.8rem;
     font-weight: 600;
 
@@ -322,7 +368,7 @@ main {
 
 
 /* =========================
-   NEXT MATCH
+   MATCH CARD
    ========================= */
 
 .match-card {
@@ -346,6 +392,7 @@ main {
     justify-content: space-between;
 
     color: #777;
+
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -361,6 +408,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: clamp(35px, 10vw, 150px);
 }
 
@@ -370,6 +418,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 15px;
 
     text-align: center;
@@ -396,21 +445,49 @@ main {
 
 .belgium-crest {
     border-color: #c8102e;
+    background: #101010;
+}
+
+.crest-flag {
+    width: 50px;
+    height: 65px;
+
+    display: flex;
+    overflow: hidden;
+}
+
+.crest-flag i {
+    flex: 1;
+}
+
+.crest-flag i:nth-child(1) {
+    background: #050505;
+}
+
+.crest-flag i:nth-child(2) {
+    background: #f4c300;
+}
+
+.crest-flag i:nth-child(3) {
+    background: #c8102e;
 }
 
 .france-crest {
     border-color: #273e91;
+    color: #ffffff;
 }
 
 .match-time {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 3px;
 }
 
 .match-time span {
     color: #666;
+
     font-size: 0.65rem;
     font-weight: 800;
 }
@@ -430,6 +507,7 @@ main {
     border-top: 1px solid #222;
 
     color: #666;
+
     font-size: 0.75rem;
     text-align: center;
 }
@@ -442,6 +520,7 @@ main {
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 20px;
 }
 
@@ -462,6 +541,7 @@ main {
 
 .card-top h2 {
     margin-top: 5px;
+
     font-size: 1.4rem;
 }
 
@@ -482,12 +562,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 20px;
 }
 
 .result-score > div {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     font-size: 0.8rem;
@@ -520,6 +602,7 @@ main {
     border-top: 1px solid #222;
 
     color: #666;
+
     font-size: 0.7rem;
 }
 
@@ -538,6 +621,7 @@ main {
     border-bottom: 1px solid #202020;
 
     color: #999;
+
     font-size: 0.8rem;
 }
 
@@ -551,9 +635,11 @@ main {
 
 .table-header {
     min-height: 30px;
+
     border-bottom: 1px solid #333;
 
     color: #555;
+
     font-size: 0.65rem;
     font-weight: 700;
 }
@@ -565,6 +651,7 @@ main {
     border-left: 2px solid #c8102e;
 
     background: #181818;
+
     color: #ffffff;
 }
 
@@ -576,6 +663,7 @@ main {
 .player-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
 }
 
@@ -591,6 +679,7 @@ main {
     align-items: flex-end;
 
     border: 1px solid #262626;
+
     background:
         linear-gradient(
             145deg,
@@ -666,6 +755,7 @@ main {
 .site-footer {
     width: min(1400px, 92%);
     margin: 0 auto;
+
     padding: 30px 0;
 
     display: flex;
@@ -674,6 +764,7 @@ main {
     border-top: 1px solid #202020;
 
     color: #666;
+
     font-size: 0.75rem;
 }
 
@@ -681,6 +772,35 @@ main {
 /* =========================
    RESPONSIVE
    ========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 90px 5%;
+    }
+
+    .hero-visual {
+        width: 45%;
+    }
+
+    .belgian-flag {
+        width: 260px;
+        height: 360px;
+        right: 0;
+    }
+
+    .hero-badge {
+        width: 160px;
+        height: 160px;
+        right: 30%;
+    }
+
+    .dashboard-grid,
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 @media (max-width: 800px) {
 
@@ -699,20 +819,16 @@ main {
 
     .hero-visual {
         position: absolute;
-        right: -80px;
+        right: -50px;
         width: 55%;
-        opacity: 0.35;
-    }
-
-    .dashboard-grid,
-    .player-grid {
-        grid-template-columns: 1fr;
+        opacity: 0.4;
     }
 
     .match-teams {
         gap: 25px;
     }
 }
+
 
 @media (max-width: 520px) {
 
@@ -725,6 +841,7 @@ main {
     }
 
     .hero {
+        min-height: 600px;
         padding: 65px 0;
     }
 
@@ -733,7 +850,13 @@ main {
     }
 
     .hero-visual {
-        display: none;
+        right: -100px;
+        width: 75%;
+        opacity: 0.25;
+    }
+
+    .hero-description {
+        max-width: 280px;
     }
 
     .section-heading {
@@ -755,6 +878,11 @@ main {
         height: 70px;
     }
 
+    .crest-flag {
+        width: 34px;
+        height: 45px;
+    }
+
     .result-score {
         gap: 8px;
     }
@@ -762,5 +890,9 @@ main {
     .result-score > div {
         flex-direction: column;
         text-align: center;
+    }
+
+    .score {
+        font-size: 1.5rem;
     }
 }
